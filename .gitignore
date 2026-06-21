@@ -1,0 +1,21 @@
+# Large model artifacts and generated outputs
+results/
+saved_summary_model/
+.ipynb_checkpoints/
+__pycache__/
+.virtual_documents/
+anaconda_projects/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.model
+
+# OS/editor noise
+.DS_Store
+.vscode/
+
+*.pyc
+venv/
+env/
+.venv/
