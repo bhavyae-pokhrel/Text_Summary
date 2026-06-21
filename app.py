@@ -30,7 +30,10 @@ else:
 async def load_model():
     global model, tokenizer
     tokenizer = T5Tokenizer.from_pretrained("t5-small")
-    model = T5ForConditionalGeneration.from_pretrained("t5-small")
+    model = T5ForConditionalGeneration.from_pretrained(
+        "t5-small",
+        low_cpu_mem_usage=True  # avoids holding a duplicate copy of weights in memory while loading
+    )
     model.to(device)
     model.eval()  # inference mode -- avoids keeping autograd graph buffers around
 
